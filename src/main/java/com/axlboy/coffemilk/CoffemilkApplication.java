@@ -22,10 +22,10 @@ public class CoffemilkApplication extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception { // escanea toda nuestra aplicacion y busca nuestras dependencias
-		applicationContext = SpringApplication.run(CoffemilkApplication.class);
+		applicationContext = SpringApplication.run(CoffemilkApplication.class); //Esta corriendo la aplicación y escanea el paquete CoffeMilkApplication, entra al paquete y busca los Beans y los carga en el Application Context
 		FXMLLoader loader = new FXMLLoader(CoffemilkApplication.class.getResource("/index.fxml"));
 		loader.setControllerFactory(applicationContext::getBean); //carga las dependencias
-		Scene scene = new Scene(loader.load(), 800, 1000, false,SceneAntialiasing.BALANCED);
+		Scene scene = new Scene(loader.load(), 600, 400, false,SceneAntialiasing.BALANCED);
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
