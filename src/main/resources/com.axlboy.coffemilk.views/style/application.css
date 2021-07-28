@@ -33,7 +33,7 @@
     -fx-border-color: gray;
 }
 
-.button:hover {
+.button:hover, .button:focused {
     -fx-background-color : gray;
     -fx-text-fill: white;
 }

@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,6 +42,19 @@ public class Login {
     @FXML
     private Button btnLogin;
 
+    private void attachEvent(){
+        txtID.getScene().setOnKeyPressed(event -> {
+            if(event.getCode() == KeyCode.ENTER){
+                if (btnClose.isFocused()){
+                    onClose();
+                }
+                if (btnLogin.isFocused()){
+                    onLogin();
+                }
+            }
+        });
+    }
+
     @FXML
     private void onClose() {
         btnClose.getScene().getWindow().hide();
@@ -64,8 +78,13 @@ public class Login {
         try {
             FXMLLoader loader = new FXMLLoader(Login.class.getResource("/com.axlboy.coffemilk.views/login.fxml"));
             loader.setControllerFactory(CoffeMilkApplication.getApplicationContext()::getBean);
+
             Parent view = loader.load();
             stage.setScene(new Scene((view)));
+
+            Login controller = loader.getController();
+            controller.attachEvent();
+
             stage.show();
         }catch (IOException e){
             e.printStackTrace();

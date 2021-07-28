@@ -40,8 +40,8 @@
                   <PasswordField fx:id="txtPassword" promptText="Ingrese su contraseña..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#onClose" styleClass="wid-120" text="Cerrar" />
                         <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onLogin" styleClass="wid-120" text="Ingresar" />
+                        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#onClose" styleClass="wid-120" text="Cerrar" />
                      </children>
                      <styleClass>
                         <String fx:value="al-center-left" />
