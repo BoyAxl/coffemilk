@@ -64,8 +64,13 @@ public class Login {
     private void onLogin() {
         try {
             user = service.login(txtID.getText(), txtPassword.getText());
-            lblmessage.setText("Success");
-            //Aquí se abre la aplicación
+
+            //Open App
+            MainFrame.show();
+
+            //cerrar vista de login
+            onClose();
+
         }catch (PostException e){
             lblmessage.setText(e.getMessage());
         }catch (Exception e){
