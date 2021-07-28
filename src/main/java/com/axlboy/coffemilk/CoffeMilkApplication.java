@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 public class CoffeMilkApplication extends Application {
 
-	private ConfigurableApplicationContext applicationContext;
+	private static ConfigurableApplicationContext applicationContext;
 
 	@Override
 	public void init() throws Exception {
@@ -33,5 +33,9 @@ public class CoffeMilkApplication extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		Login.loadView(stage);
+	}
+
+	public static ConfigurableApplicationContext getApplicationContext() {
+		return applicationContext;
 	}
 }

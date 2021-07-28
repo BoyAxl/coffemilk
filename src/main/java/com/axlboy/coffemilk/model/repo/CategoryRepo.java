@@ -1,4 +1,4 @@
-package com.axlboy.coffemilk.model.entity.repo;
+package com.axlboy.coffemilk.model.repo;
 
 import com.axlboy.coffemilk.model.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
