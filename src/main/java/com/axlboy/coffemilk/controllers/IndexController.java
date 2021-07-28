@@ -1,6 +1,6 @@
 package com.axlboy.coffemilk.controllers;
 
-import com.axlboy.coffemilk.models.Cliente;
+import com.axlboy.coffemilk.model.Cliente;
 import com.axlboy.coffemilk.repos.ClienteRep;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;

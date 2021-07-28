@@ -1,4 +1,4 @@
-package com.axlboy.coffemilk.models;
+package com.axlboy.coffemilk.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
