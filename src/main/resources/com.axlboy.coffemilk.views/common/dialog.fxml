@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axlboy.coffemilk.views.common.Dialog">
+   <children>
+      <VBox styleClass="dialog-icon">
+         <children>
+            <SVGPath content="M0 33c0 2.21 1.79 4 4 4h6v6.17c0 1.11 0.9 2 2 2 0.561 0 1.069-0.23 1.43-0.6l7.57-7.57h22c2.21 0 4-1.79 4-4l-0-25c0-2.21-1.79-4-4-4l-39 0c-2.21 0-4 1.79-4 4v25zM12 21.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5zM21 21.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5zM30 21.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5z" scaleX="2.0" scaleY="2.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="title" styleClass="dialog-title" text="Label" />
+            <VBox styleClass="dialog-message-box">
+               <children>
+                  <Label fx:id="message" text="Label" />
+               </children>
+            </VBox>
+            <HBox>
+               <children>
+                  <Button fx:id="okBtn" mnemonicParsing="false" styleClass="wid-120" text="Ok" />
+                  <Button mnemonicParsing="false" onAction="#cancel" styleClass="wid-120" text="Cancelar" />
+               </children>
+               <styleClass>
+                  <String fx:value="sp-10" />
+                  <String fx:value="dialog-button-box" />
+               </styleClass>
+            </HBox>
+         </children>
+         <styleClass>
+            <String fx:value="dialog-body" />
+            <String fx:value="sp-10" />
+         </styleClass>
+      </VBox>
+   </children>
+</HBox>

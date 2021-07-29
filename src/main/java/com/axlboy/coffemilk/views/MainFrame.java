@@ -2,6 +2,7 @@ package com.axlboy.coffemilk.views;
 
 import com.axlboy.coffemilk.CoffeMilkApplication;
 import com.axlboy.coffemilk.utils.Menu;
+import com.axlboy.coffemilk.views.common.Dialog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -31,7 +32,11 @@ public class MainFrame {
         //System.out.println(node.getId());
 
         if(node.getId().equals("exit")){
-            sideBar.getScene().getWindow().hide();
+            Dialog.DialogBuilder.builder()
+                    .title("Confirmar")
+                    .message("Desea salir de CoffeMilk?")
+                    .okActionListener(() -> sideBar.getScene().getWindow().hide())
+                    .build().show();
         }else{
             Menu menu = Menu.valueOf(node.getId());
             loadView(menu);
