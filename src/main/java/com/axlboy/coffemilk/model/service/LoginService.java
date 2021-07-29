@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 @Service
-public class LoginService {
+public class LoginService { //Servicio de validacion
 
     @Autowired
     private AccountRepo repo;
