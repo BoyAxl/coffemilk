@@ -3,7 +3,7 @@ package com.axlboy.coffemilk.utils;
 public enum Menu {
     home("CoffeMilk Dashboard"),
     sales("Historial de Ventas"),
-    category("Manjador de Categorías"),
+    category("Manejador de Categorías"),
     product("Manjeador de Productos");
 
     private String title;

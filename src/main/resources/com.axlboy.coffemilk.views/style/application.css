@@ -87,6 +87,8 @@
 .content-view {
     -fx-pref-width: 1180px;
     -fx-pref-height: 780px;
+    -fx-max-width: 5000px;
+    -fx-max-height: 3000px;
 }
 
 .content-view-header {
@@ -140,4 +142,27 @@
 .dialog-button:hover {
     -fx-background-color: primary;
     -fx-text-fill: secondary-light;
+}
+
+.category-container {
+    -fx-padding: 0 20 20 20;
+    -fx-vgap: 20;
+    -fx-hgap: 20;
+}
+
+.category-item {
+    -fx-alignment: center-left;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-pref-width: 240px;
+    -fx-background-color: secondary;
+}
+
+.category-item Label{
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+.category-item SVGPath {
+    -fx-fill: secondary-light;
 }

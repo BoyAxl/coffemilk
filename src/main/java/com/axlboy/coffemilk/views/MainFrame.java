@@ -58,6 +58,10 @@ public class MainFrame {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(menu.getFxml()));
             loader.setControllerFactory(CoffeMilkApplication.getApplicationContext()::getBean);
             Parent view = loader.load();
+
+            AbstractController controller = loader.getController();
+            controller.setTitle(menu);
+
             contentView.getChildren().add(view);
         }catch (Exception e){
             e.printStackTrace();
