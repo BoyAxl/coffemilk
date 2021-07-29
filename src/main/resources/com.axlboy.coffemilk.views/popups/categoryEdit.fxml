@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+
+<HBox styleClass="dialog" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.axlboy.coffemilk.views.popups.CategoryEdit">
+   <children>
+      <VBox styleClass="dialog-icon">
+         <children>
+            <SVGPath content="M34.001 11.499c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5zM16.521 46.839c1.54 1.551 4.040 1.551 5.59 0l24.44-24.28c0.979-0.979 1.47-2.27 1.45-3.56v-14.040c0-2.74-2.221-4.96-4.96-4.96h-14.040c-1.29-0.021-2.58 0.47-3.561 1.45l-24.279 24.441c-1.551 1.549-1.551 4.049 0 5.59l15.36 15.359zM30.001 11.499c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5-6.5-2.91-6.5-6.5z" />
+         </children>
+      </VBox>
+      <VBox styleClass="dialog-body" HBox.hgrow="ALWAYS">
+         <children>
+            <Label fx:id="title" styleClass="dialog-title" text="Label" />
+            <VBox styleClass="dialog-message-box">
+               <children>
+                  <Label fx:id="message" />
+                  <Label text="Nombre de la Categoria:" />
+                  <TextField fx:id="name" promptText="Ingrese un nombre de categoría..." />
+               </children>
+            </VBox>
+            <HBox>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" styleClass="wid-120" text="Cerrar" />
+                  <Button mnemonicParsing="false" onAction="#save" styleClass="wid-120" text="Agregar" />
+               </children>
+               <styleClass>
+                  <String fx:value="dialog-button-box" />
+                  <String fx:value="sp-10" />
+               </styleClass>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

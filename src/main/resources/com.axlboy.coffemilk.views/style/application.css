@@ -96,7 +96,20 @@
 }
 
 .content-view-header > .title{
-    -fx-font-size: 20px;
+    -fx-font-size: 32px;
+}
+
+.add-button {
+    -fx-alignment: center;
+    -fx-pref-width: 100px;
+}
+
+.add-button:hover {
+    -fx-background-color: primary-light;
+}
+
+.add-button:hover SVGPath{
+    -fx-fill: white;
 }
 
 .dialog {
@@ -125,6 +138,7 @@
 
 .dialog-message-box {
     -fx-padding: 20 0 20 0;
+    -fx-spacing: 5;
 }
 
 .dialog-message-box Label {
@@ -165,4 +179,18 @@
 
 .category-item SVGPath {
     -fx-fill: secondary-light;
+}
+
+.search-bar {
+    -fx-padding: 0 0 0 20;
+    -fx-spacing: 10;
+}
+
+.search-bar > TextField, .search-bar > ComboBox {
+    -fx-pref-width: 200px;
+    -fx-max-width: 280px;
+}
+
+.table-wrapper {
+    -fx-padding: 20;
 }
