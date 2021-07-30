@@ -1,5 +1,7 @@
 package com.axlboy.coffemilk.model.entity;
 
+import com.axlboy.coffemilk.utils.FormatUtils;
+
 import javax.persistence.*;
 
 @Entity
@@ -67,5 +69,13 @@ public class Product {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getPriceStr(){
+        return FormatUtils.formatNumber(price);
+    }
+
+    public String getValidStr(){
+        return valid? "Si" : "No";
     }
 }

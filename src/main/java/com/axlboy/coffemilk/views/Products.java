@@ -4,11 +4,10 @@ import com.axlboy.coffemilk.model.entity.Category;
 import com.axlboy.coffemilk.model.entity.Product;
 import com.axlboy.coffemilk.model.service.CategoryService;
 import com.axlboy.coffemilk.model.service.ProductService;
+import com.axlboy.coffemilk.views.common.Dialog;
 import com.axlboy.coffemilk.views.popups.ProductEdit;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -27,25 +26,48 @@ public class Products extends AbstractController{
     @Autowired
     private ProductService productService;
 
-
+    @FXML
+    private TableView<Product> tableView;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         category.getItems().clear();
         category.getItems().addAll(categoryService.findAll());
 
-        tableView.setOnMouseClicked(event -> {
-            if(event.getClickCount() == 2){
-                Product product = tableView.getSelectionModel().getSelectedItem();
-                if(null == product){
-                    ProductEdit.edit(product, this::save, categoryService::findAll);
-                }
+        MenuItem edit = new MenuItem("Editar Producto");
+        edit.setOnAction(event -> {
+            Product product = tableView.getSelectionModel().getSelectedItem();
+            if(null != product) {
+                ProductEdit.edit(product, this::save, categoryService::findAll);
             }
         });
-    }
 
-    @FXML
-    private TableView<Product> tableView;
+        MenuItem changeState = new MenuItem("Cambiar Estado");
+        changeState.setOnAction(event -> {
+            Product product = tableView.getSelectionModel().getSelectedItem();
+            if(null != product) {
+                String message;
+
+                if (product.isValid()){
+                    message =  String.format("Desea desactivar el producto: %s?", product.getName());
+                }else{
+                    message = String.format("Desea activar el producto: %s?", product.getName());
+                }
+
+                Dialog.DialogBuilder.builder()
+                        .title("Change Status")
+                        .message(message)
+                        .okActionListener(() -> {
+                            product.setValid(!product.isValid());
+                            productService.save(product);
+                            search();
+                        })
+                        .build().show();
+            }
+        });
+
+        tableView.setContextMenu(new ContextMenu(edit, changeState));
+    }
 
     @FXML
     private void search() {
@@ -68,8 +90,8 @@ public class Products extends AbstractController{
 
     private void save(Product product){
         productService.save(product);
-        category.setValue(product.getCategory());
-        name.setText(product.getName());
+        //category.setValue(product.getCategory());
+        //name.setText(product.getName());
         search();
     }
 }
