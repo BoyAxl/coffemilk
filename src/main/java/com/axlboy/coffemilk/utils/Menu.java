@@ -4,7 +4,7 @@ public enum Menu {
     home("CoffeMilk Dashboard"),
     sales("Historial de Ventas"),
     category("Manejador de Categorías"),
-    product("Manjeador de Productos");
+    product("Manejador de Productos");
 
     private String title;
 

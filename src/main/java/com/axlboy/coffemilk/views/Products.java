@@ -31,6 +31,7 @@ public class Products extends AbstractController{
 
     @FXML
     private void initialize() {
+        initTable();
         category.getItems().clear();
         category.getItems().addAll(categoryService.findAll());
 
@@ -69,6 +70,13 @@ public class Products extends AbstractController{
         tableView.setContextMenu(new ContextMenu(edit, changeState));
     }
 
+
+    private void initTable(){
+        tableView.getItems().clear();
+        List<Product> list = productService.getProducts();
+        tableView.getItems().addAll(list);
+    }
+
     @FXML
     private void search() {
         tableView.getItems().clear();
@@ -80,7 +88,7 @@ public class Products extends AbstractController{
     private void clear() {
         category.setValue(null);
         name.clear();
-        tableView.getItems().clear();
+        initTable();
     }
 
     @FXML
@@ -92,6 +100,6 @@ public class Products extends AbstractController{
         productService.save(product);
         //category.setValue(product.getCategory());
         //name.setText(product.getName());
-        search();
+        initTable();
     }
 }

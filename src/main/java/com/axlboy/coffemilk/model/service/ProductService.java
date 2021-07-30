@@ -15,7 +15,11 @@ public class ProductService {
     @Autowired
     private ProductRepo productRepo;
 
-    public List<Product> search(Category value, String name) {
+    public List<Product> getProducts(){
+        return productRepo.findAll();
+    }
+
+    public List<Product> search(Category value, String name) { //Buscar Productos
         return productRepo.findAll();
     }
 

@@ -3,7 +3,7 @@ package com.axlboy.coffemilk.utils;
 import java.text.DecimalFormat;
 
 public class FormatUtils {
-    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#,##0");
+    private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("$#,##0");
 
     public static String formatNumber(int data){
         return DECIMAL_FORMAT.format(data);
