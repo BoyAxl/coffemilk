@@ -37,10 +37,24 @@
     -fx-pref-width: 120px;
 }
 
-.text-field, .password-field, .button {
+.text-field, .password-field, .button, .combo-box {
     -fx-background-color: transparent;
     -fx-border-style: solid;
     -fx-border-color: secondary;
+}
+
+.text-area {
+    -fx-pref-height: 80px;
+    -fx-border-style: solid;
+    -fx-border-color: secondary;
+}
+
+.text-area,
+.text-area .scroll-pane,
+.text-area .scroll-pane .viewport,
+.text-area .scroll-pane .content
+ {
+    -fx-background-color: transparent;
 }
 
 .button:hover, .button:focused {
@@ -138,6 +152,10 @@
 
 .dialog-message-box {
     -fx-padding: 20 0 20 0;
+    -fx-spacing: 5;
+}
+
+.dialog-input-box {
     -fx-spacing: 5;
 }
 

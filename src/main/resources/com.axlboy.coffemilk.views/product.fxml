@@ -19,7 +19,7 @@
                   <Label fx:id="title" styleClass="title" text="Product" />
                </children>
             </HBox>
-            <VBox styleClass="add-button">
+            <VBox onMouseClicked="#addNew" styleClass="add-button">
                <children>
                   <SVGPath content="M31 12h-11v-11c0-0.552-0.447-1-1-1h-6c-0.553 0-1 0.448-1 1v11h-11c-0.553 0-1 0.448-1 1v6c0 0.553 0.447 1 1 1h11v11c0 0.553 0.447 1 1 1h6c0.553 0 1-0.447 1-1v-11h11c0.553 0 1-0.447 1-1v-6c0-0.552-0.447-1-1-1z" />
                </children>
@@ -28,15 +28,15 @@
       </HBox>
       <HBox styleClass="search-bar">
          <children>
-            <ComboBox prefWidth="150.0" />
-            <TextField promptText="Nombre del Producto" />
-            <Button mnemonicParsing="false" text="Buscar" />
-            <Button mnemonicParsing="false" text="Limpiar" />
+            <ComboBox fx:id="category" prefWidth="150.0" />
+            <TextField fx:id="name" promptText="Nombre del Producto" />
+            <Button mnemonicParsing="false" onAction="#search" text="Buscar" />
+            <Button mnemonicParsing="false" onAction="#clear" text="Limpiar" />
          </children>
       </HBox>
       <VBox styleClass="table-wrapper" VBox.vgrow="ALWAYS">
          <children>
-            <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn maxWidth="65.0" minWidth="65.0" prefWidth="65.0" text="ID" />
                 <TableColumn maxWidth="230.0" minWidth="230.0" prefWidth="230.0" text="Categoria" />
